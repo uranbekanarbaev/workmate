@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if data is iterable %}
+        {% for kitty in data %}
+            <div>
+                <h2>{{ kitty.name }}</h2>
+                <p>ID: {{ kitty.id }}</p>
+                <p>Description: {{ kitty.description }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div>
+            <h2>{{ data.name }}</h2>
+            <p>ID: {{ data.id }}</p>
+            <p>Description: {{ data.description }}</p>
+        </div>
+    {% endif %}
+{% endblock %}
